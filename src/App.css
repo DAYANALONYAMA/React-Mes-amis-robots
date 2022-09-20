@@ -101,7 +101,3 @@ html body {
   transform: scale(1.1);
   transition: transform 1s;
 }
-
-.email {
-  color: black;
-}

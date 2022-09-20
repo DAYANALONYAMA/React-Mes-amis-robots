@@ -51,7 +51,7 @@ function Searched() {
                     </div>
                     <div className="more-info">
                       <p> {user.name} </p>
-                      <p className="email"> {user.email} </p>
+                      <p> {user.email} </p>
                       <p> {user.address.city} </p>
                       <p> {user.phone} </p>
                       <p> {user.website} </p>
