@@ -1,7 +1,8 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import Search from "./Search";
 import { useEffect, useState } from "react";
+
 function Searched() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
 
@@ -33,24 +34,30 @@ function Searched() {
             )
             .map((user) => {
               return (
-                <div key={user.id} className="main-container">
-                  <div className="robot">
-                    {" "}
-                    <img src={`https://robohash.org/${user.id}`}></img>
-                  </div>
-                  <div className="robot-infos">
-                    <p className="name"> {user.name}</p>
+                <Link
+                  style={{ color: "black" }}
+                  key={user.id}
+                  to={`/${user.id}`}
+                >
+                  <div className="main-container">
+                    <div className="robot">
+                      {" "}
+                      <img src={`https://robohash.org/${user.id}`}></img>
+                    </div>
+                    <div className="robot-infos">
+                      <p className="name"> {user.name}</p>
 
-                    <p className="email"> {user.email} </p>
+                      <p className="email"> {user.email} </p>
+                    </div>
+                    <div className="more-info">
+                      <p> {user.name} </p>
+                      <p className="email"> {user.email} </p>
+                      <p> {user.address.city} </p>
+                      <p> {user.phone} </p>
+                      <p> {user.website} </p>
+                    </div>
                   </div>
-                  <div className="more-info">
-                    <p> {user.name} </p>
-                    <p> {user.email} </p>
-                    <p> {user.address.city} </p>
-                    <p> {user.phone} </p>
-                    <p> {user.website} </p>
-                  </div>
-                </div>
+                </Link>
               );
             })}
         </div>
