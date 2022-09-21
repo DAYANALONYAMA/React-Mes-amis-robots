@@ -11,8 +11,11 @@ function Search({ search, setSearch }) {
       >
         Mes amis Robots
       </h1>
+
       <input
+        className="barre-recherche"
         onChange={(e) => setSearch(e.target.value)}
+        placeholder="Rechercher par nom"
         type="text"
         name="search"
         value={search}
